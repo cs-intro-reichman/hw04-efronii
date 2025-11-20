@@ -37,7 +37,7 @@ public class ArrCharOps {
      */
     public static char charAt(char[] arr, int index) {
         // Replace the following statement with your code
-        return 0;
+        return arr[index];
     }
 
     /** If the two arrays have the same value in every index, 
@@ -45,7 +45,13 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
-        return false;
+        if(arr1.length!=arr2.length){return false;}
+        for(int i =0;i<arr1.length;i++){
+            if(arr1[i]!=arr2[i]){
+                return false;
+            }
+        }
+        return true;
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
@@ -53,6 +59,11 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch) {
         // Replace the following statement with your code
+        for(int i =0;i<arr.length;i++){
+            if(arr[i]==ch){
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -60,6 +71,11 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
         // Replace the following statement with your code
+        for(int i =fromIndex;i<arr.length;i++){
+            if(arr[i]==ch){
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -68,14 +84,32 @@ public class ArrCharOps {
      */
     public static int lastIndexOf(char[] arr, char ch) {
         // Replace the following statement with your code
-        return -1;
+        int oc=-1;        
+        for(int i =0;i<arr.length;i++){  
+            if(arr[i]==ch){
+                oc=i;
+            }
+        }
+        if(oc!=-1){
+            return oc;
+        }else{
+            return -1;
+        }
     }
 
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
-        return null;
+        char[] arrt= new char[arr1.length+arr2.length];
+        for(int i=0;i<arrt.length;i++){
+            if(i<arr1.length){
+                arrt[i]=arr1[i];
+            }else{
+                arrt[i]=arr2[i-arr1.length];
+            }
+        }
+        return arrt;
     }
 
     /** Returns a new array that can be described as a sub-array of this array.
@@ -85,7 +119,11 @@ public class ArrCharOps {
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
         // Replace the following statement with your code
-        return null;
+        char[] arrt= new char[endIndex-beginIndex];
+        for(int i =beginIndex;i<endIndex;i++){
+            arrt[i-beginIndex]=arr[i];
+        }
+        return arrt;
     }
 
      /** Returns a single integer that represents the given array. This integer is sometimes 
@@ -97,7 +135,13 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         // Replace the following statement with your code
-        return 0;
+        int hs = 0;
+        for(int i =0;i<arr.length;i++){
+            hs+=arr[i]*Math.pow(7, arr.length-1-i);
+
+        }
+        return hs;
+        
     }
 
     /**
@@ -127,6 +171,25 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
-        return 0;
+        int sh=-2;
+        int l=0;
+        if(str1.length()==str2.length()){
+            l=str2.length();
+            sh=0;
+        }else if(str1.length()>str2.length()){
+            l=str2.length();
+            sh=1;
+        }else {
+            l=str1.length();
+            sh=-1;
+        }
+        for(int i =0;i<l;i++){
+            if(str1.charAt(i)<str2.charAt(i)){
+                return -1;
+            }else if(str1.charAt(i)>str2.charAt(i)){
+                return 1;
+            }
+        }
+        return sh;
     }
 }
