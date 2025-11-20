@@ -176,10 +176,10 @@ public class ArrCharOps {
         if(str1.length()==str2.length()){
             l=str2.length();
             sh=0;
-        }else if(str1.length()>str2.length()){
+        }else if(str1.length()>str2.length()&&str2.length()>0){
             l=str2.length();
             sh=1;
-        }else {
+        }else if(str2.length()>str1.length()&&str1.length()>0){
             l=str1.length();
             sh=-1;
         }

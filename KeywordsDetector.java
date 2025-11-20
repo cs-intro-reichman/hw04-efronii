@@ -29,7 +29,7 @@ public class KeywordsDetector {
                     keywords[j] = MyString.lowerCase(keywords[j]);
                 }
                 if(MyString.contains(sentences[i],keywords[j])){
-                    System.out.println(sentences[i]);
+                    System.out.println((char)(sentences[i].charAt(0)-32)+sentences[i].substring(1));
                     break;
                 }
             }

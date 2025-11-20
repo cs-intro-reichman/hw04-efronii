@@ -34,10 +34,12 @@ public class MyString {
     public static boolean contains(String str1, String str2) {
         // Replace the following statement with your code
         boolean c=false;
-        if (str2.length() > str1.length()){
+        if (str2.length() > str1.length()||(str1.length()==0)){
             return c;
         }
-            
+        if (str2.length()==0){
+            return true;
+        } 
         for(int i =0 ;i<=str1.length()-str2.length();i++){
             if(str1.charAt(i)==str2.charAt(0)){
                 c=true;
