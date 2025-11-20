@@ -26,7 +26,7 @@ public class Primes {
                 c++;
             }
         }
-        System.out.println("There are "+c+" primes between 2 and "+n+" ("+(int)((c*100.0)/(n-1))+"% are primes)");
+        System.out.println("There are "+c+" primes between 2 and "+n+" ("+(int)((c*100.0)/(n))+"% are primes)");
         
  
     }
