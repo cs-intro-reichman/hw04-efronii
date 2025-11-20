@@ -8,7 +8,7 @@ public class KeywordsDetector {
             "Let's talk about data and algorithms",
             "Chatbots are great but must be used carefully",
             "This blockchain-based solution will disrupt the industry",
-            "The team showed great synergy in the last project",
+            "The team showed great Synergy in the last project",
             "Use simple words without hype and fluff",
             "Our new technology presents a significant paradigm shift",
             "Effective presentations must be clear, concise, and humble"
@@ -23,13 +23,10 @@ public class KeywordsDetector {
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
         for(int i =0;i<sentences.length;i++){    
-            sentences[i] = MyString.lowerCase(sentences[i]);
+
             for(int j =0;j<keywords.length;j++){
-                if(i==0){
-                    keywords[j] = MyString.lowerCase(keywords[j]);
-                }
-                if(MyString.contains(sentences[i],keywords[j])){
-                    System.out.println((char)(sentences[i].charAt(0)-32)+sentences[i].substring(1));
+                if(MyString.contains(MyString.lowerCase(sentences[i]),MyString.lowerCase(keywords[j]))){
+                    System.out.println(sentences[i]);
                     break;
                 }
             }

@@ -4,7 +4,7 @@ public class Primes {
         int n = Integer.parseInt(args[0]);
         boolean[] arr = new boolean[n+1];
         int c = 0;
-        System.out.println("Prime numbers up to "+n+": ");
+        System.out.println("Prime numbers up to "+n+":");
         for(int i =2;i<=n;i++){
             arr[i]=true;
             
@@ -26,8 +26,6 @@ public class Primes {
                 c++;
             }
         }
-        System.out.println("There are "+c+" primes between 2 and "+n+" ("+(int)((c*100.0)/(n))+"% are primes)");
-        
- 
+        System.out.println("There are " + c + " primes between 2 and " + n + " (" + (int)((c*100.0)/n) + "% are primes)");
     }
 }
